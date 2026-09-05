@@ -1,0 +1,44 @@
+name: Build APK
+
+# Ye workflow tab chalega jab:
+# 1. main branch par kuch push hoga
+# 2. GitHub par "Actions" tab se manually "Run workflow" dabaoge
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code checkout karo
+        uses: actions/checkout@v4
+
+      - name: JDK 17 setup karo
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Gradle ko executable banao
+        run: chmod +x gradlew
+
+      - name: Debug APK build karo
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: APK ko artifact ke roop me upload karo
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Naya GitHub Release banao aur APK attach karo
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Auto Build ${{ github.run_number }}
+          files: app/build/outputs/apk/debug/app-debug.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
