@@ -153,7 +153,7 @@ class MainActivity : AppCompatActivity() {
                     addRequestHeader("User-Agent", userAgent)
                     setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
                     setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName)
-                    setAllowedOverMeteredNetworks(true)
+                    setAllowedOverMetered(true)
                     setAllowedOverRoaming(true)
                 }
                 val dm = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
