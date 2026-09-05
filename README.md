@@ -52,6 +52,21 @@ git remote add origin https://github.com/<aapka-username>/<repo-name>.git
 git push -u origin main
 ```
 
+## GitHub par push karte hi APK khud ban jayegi (GitHub Actions)
+
+Is project me `.github/workflows/build.yml` already daala hua hai. Iska matlab:
+
+1. Upar wale push karte hi GitHub apne aap APK build kar dega — Android Studio ki zarurat nahi
+2. APK download karne ke 2 tarike:
+   - **Actions tab se:** GitHub repo → **Actions** tab → sabse upar wala run kholo → neeche **Artifacts** section me `app-debug-apk` milega, download kar lo (zip me APK hoga)
+   - **Releases se:** repo ke right side **Releases** section me `build-1`, `build-2`... naam se release milega, wahan seedha `app-debug.apk` file milegi, download karke phone me install kar lo
+3. Manually bhi chala sakte ho: **Actions** tab → left side **Build APK** workflow → **Run workflow** button
+
+⚠️ Pehli baar push karne ke baad Actions tab me build 3-5 minute lega — wahan live progress dikhega.
+
+⚠️ Ye APK "debug" build hai (testing/personal use ke liye theek hai). Play Store par daalne ke liye "release" build sign karni padegi — bata dena to woh workflow bhi bana dunga.
+
+
 ## Files ka structure
 
 ```
