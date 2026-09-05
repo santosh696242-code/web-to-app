@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Center me logo -->
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_mark"
+        android:contentDescription="@string/app_name" />
+
+    <!-- Neeche: certification badges + secure payments text -->
+    <LinearLayout
+        android:id="@+id/bottomBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_check_circle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="18dp"
+                android:orientation="vertical"
+                android:text="PCI DSS\nCOMPLIANT"
+                android:textColor="#111111"
+                android:textStyle="bold"
+                android:textSize="9sp"
+                android:lineSpacingExtra="0dp" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_shield_check" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_globe" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="ISO 27001\nCERTIFIED"
+                android:textColor="#111111"
+                android:textStyle="bold"
+                android:textSize="9sp"
+                android:lineSpacingExtra="0dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="100% SECURE MOBILE PAYMENTS"
+            android:textColor="#5B0E8B"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:letterSpacing="0.03" />
+
+    </LinearLayout>
+
+    <!-- Neeche decorative home-indicator jaisi patti -->
+    <View
+        android:layout_width="90dp"
+        android:layout_height="4dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:background="#DDDDDD" />
+
+</RelativeLayout>

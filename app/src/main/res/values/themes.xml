@@ -1,0 +1,14 @@
+<resources>
+    <style name="Theme.WebViewApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#111827</item>
+        <item name="android:windowBackground">#111827</item>
+    </style>
+
+    <!-- Splash screen ke liye alag theme: white background, layout khud icon+badges dikhata hai -->
+    <style name="Theme.WebViewApp.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

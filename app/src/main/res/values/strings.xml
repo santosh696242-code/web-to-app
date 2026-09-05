@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">navi</string>
+    <!-- Yahan apni website ka URL daalo -->
+    <string name="website_url">https://sanaxd.blogspot.com/</string>
+</resources>
